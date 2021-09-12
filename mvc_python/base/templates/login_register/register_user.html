@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="http://127.0.0.1:9001/register_user" method="post">
+    <CENTER>
+        <p style="color:red;font-size:40px;"><b> Sign-Up </b></p>
+        <br>
+        <br>
+    <b>Enter First Name:</b>
+    <input type="text" name="fn"/>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes></ul>
+                        {% for category, message in messages %}
+                            {% if category == 'error11' %}
+                            <td><p class="{{ category }}" style="color: red; font-size: 25px">{{ message }}</p></td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+    <br>
+    <br>
+    <b>Enter Last Name:</b>
+    <input type="text" name="ln"/>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes></ul>
+                        {% for category, message in messages %}
+                            {% if category == 'error12' %}
+                            <td><p class="{{ category }}" style="color: red; font-size: 25px">{{ message }}</p></td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}<br>
+    <br>
+        <b>Enter UserName:</b>
+    <input type="text" name="un"/>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes></ul>
+                        {% for category, message in messages %}
+                            {% if category == 'error13' %}
+                            <td><p class="{{ category }}" style="color: red; font-size: 25px">{{ message }}</p></td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+        <br>
+        <br>
+        <b>Enter Password:</b>
+    <input type="text" name="pw"/>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes></ul>
+                        {% for category, message in messages %}
+                            {% if category == 'error14' %}
+                            <td><p class="{{ category }}" style="color: red; font-size: 25px">{{ message }}</p></td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+        <br>
+        <br>
+        <tr style="font-size:30px">
+                <td colspan="2">
+                    <center><input type="submit" value="submit"></center>
+                </td>
+            </tr>
+    </CENTER>
+</form>
+</body>
+</html>

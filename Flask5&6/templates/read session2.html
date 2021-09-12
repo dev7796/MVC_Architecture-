@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>setsession</title>
+</head>
+<body>
+
+<form action="http://127.0.0.1:9000/table" method="post">
+<style scoped>
+.greenText {color:green;}
+</style>
+
+ {% if 'k1' in session %}
+
+    <p class="greenText" style="font-size: 30px">{{ "Welcome  " + session['k1'] }}</p>
+
+ {% endif %}
+    <input type="submit" style="font-face: 'Comic Sans MS'; font-size: larger; color: orangered; background-color: #FFFFC1; border: 3pt ridge lightgrey" value=" VIEW DATABASE!">
+
+
+</form>
+
+</body>
+
+</html>
+

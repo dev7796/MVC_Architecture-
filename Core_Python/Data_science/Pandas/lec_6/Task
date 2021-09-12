@@ -1,0 +1,28 @@
+Zero Level Task
+semester wise no. of subjects equal
+
+
+
+First Level Task
+semester wise no. of subjects different
+
+
+
+enrollment_number
+name
+gender
+email
+contact
+no.semesters(8)
+    no. subjects(n)
+        marks
+    spi
+    cpi
+
+
+
+1-Generate DataFrame from given structure
+2-Input Data for n students
+3-Save Data in JSON File
+4-Fetch Data From JSON File and Store inside CSV File
+5-Fetch Data From CSV File and Store inside Database(create table using pandas dynamically)

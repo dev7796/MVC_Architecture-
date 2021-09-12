@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Db Sys For Data Science Project</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/database.png"/>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script>
+	function popupwindow(url, title, w, h) {
+    var y = window.outerHeight / 2 + window.screenY - ( h / 2)
+    var x = window.outerWidth / 2 + window.screenX - ( w / 2)
+    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + y + ', left=' + x);
+}
+
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    </script>
+</head>
+<body>
+
+	<div class="bg-contact2" style="background-image: url('images/bg-03.jpg');">
+		<div class="container-contact2">
+			<div class="wrap-contact2">
+
+				<form class="contact2-form" action="http://127.0.0.1:4000/setsession" method="post">
+					<span class="contact2-form-title">
+						CS527 Project #1<br>
+						<p style="font-size:18px;color:#000080;">Prof. Saed Sayad</p>
+						<p style="font-size:18px;color:#000080;">Department of Computer Science</p>
+						<p style="font-size:18px;color:#000080;">FALL 2020</p>
+						<p style="font-size:16px;font-weight:bold;">
+                            Team members: SIDDHARTH KS, DEVARSH SHAH, SAIYED SOHAILABBAS
+						</p>
+					</span>
+
+                    <div class="wrap-input2">
+                                <b>Enter Firstname:</b>
+                                <input type="text" name="Fn" />
+                                    <br>
+                                    <br>
+
+                        </div>
+                    <div class="wrap-input2">
+                                <b>Enter Lastname:</b>
+                                <input type="text" name="Ln" />
+                                    <br>
+                                    <br>
+
+                        </div>
+					<div class="wrap-input2">
+						<b>Enter UserName:</b>
+                                <input type="text" name="un"/>
+                                    <br>
+                                    <br>
+
+						<!-- <span class="focus-input2" data-placeholder="QUERY"></span> -->
+					</div>
+                        <div class="wrap-input2">
+                                <b>Enter Password:</b>
+                                <input type="password" name="pw" id="myInput" />
+                                <input type="checkbox" onclick="myFunction()">Show Password
+                                    <br>
+                                    <br>
+
+                        </div>
+
+					<div class="container-contact2-form-btn">
+						<div class="wrap-contact2-form-btn">
+							<div class="contact2-form-bgbtn"></div>
+							<button class="contact2-form-btn">Sign Up</button>
+
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form action="http://127.0.0.1:9000/getsessionOne" method="post">
+    <CENTER>
+        <h1 style="font-size:40px"><b><u> Sign-In </u></b></h1>
+        <table border="1px">
+            <tr>
+                <td style="font-size:30px">User Name</td>
+                <td><input type="text" name="un1" required="required"></td>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes></ul>
+                        {% for category, message in messages %}
+                            {% if category == 'error' %}
+                            <td><p class="{{ category }}" style="color: red; font-size: 25px">{{ message }}</p></td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </tr>
+            <tr>
+                <td style="font-size:30px">Password</td>
+                <td><input type="text" name="pw1" required="required"></td>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes></ul>
+                        {% for category, message in messages %}
+                            {% if category == 'error1' %}
+                            <td><p class="{{ category }}" style="color: red; font-size: 25px">{{ message }}</p></td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+            </tr>
+
+            <tr style="font-size:30px">
+                <td colspan="2">
+                    <center><input type="submit" value="submit"></center>
+                </td>
+            </tr>
+        </table>
+    <br>
+    <br>
+        New User? <a href="/register">Click here</a>
+
+ <style scoped>
+.redText {color:red;}
+</style>
+   {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes></ul>
+                        {% for category, message in messages %}
+                            {% if category == 'error2' %}
+                            <td><p class="{{ category }}" style="color: red; font-size: 25px">{{ message }}</p></td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+
+
+</CENTER>
+
+</form>
+</body>
+</html>

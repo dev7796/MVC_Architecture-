@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">Edit Product Image</title>
+
+</head>
+<body>
+<a href="/">Back</a><br><br>
+<form enctype="multipart/form-data" method="post" action="/admin/update_product_image/">
+    {% csrf_token %}
+
+    {% for j in product_vo_list %}
+
+        <input type="hidden" id="productId" name="productId" value="{{ j.product_id }}">
+
+        <label for="productImage">Product Image:</label>
+        <input type="file" id="productImage" name="productImage"><br><br>
+
+        <input id="submit" type="submit" value="Submit">
+    {% endfor %}
+</form>
+</body>
+</html>

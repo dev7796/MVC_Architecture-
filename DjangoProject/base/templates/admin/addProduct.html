@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">Add Product</title>
+
+    <script>
+        function loadProductSubcategory() {
+
+            var productCategoryId = document.getElementById("productCategoryId");
+            var productSubcategoryId = document.getElementById("productSubcategoryId");
+
+            productSubcategoryId.innerHTML = "";
+
+            var ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                    var json = JSON.parse(ajax.responseText);
+                    for (var i = 0; i < json.length; i++) {
+                        var option = document.createElement("option");
+                        option.value = json[i].subcategory_id;
+                        option.text = json[i].subcategory_name;
+                        productSubcategoryId.options.add(option);
+                    }
+                }
+            };
+            ajax.open("get", "/admin/ajax_subcategory_product?productCategoryId=" + productCategoryId.value, true);
+            ajax.send();
+        }
+    </script>
+
+</head>
+<body>
+<a href="/">Back</a><br><br>
+<form enctype="multipart/form-data" method="post" action="/admin/insert_product/">
+    {% csrf_token %}
+
+    <label for="productCategoryId">Category Name:</label>
+    <select name="productCategoryId" id="productCategoryId" onchange="loadProductSubcategory()">]
+        <option selected disabled>Select Category</option>
+        {% for i in category_vo_list %}
+            <option value="{{ i.category_id }}">{{ i.category_name }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label for="productSubcategoryId">SubCategory Name:</label>
+    <select name="productSubcategoryId" id="productSubcategoryId">
+        <option selected disabled>Select SubCategory</option>
+    </select><br><br>
+
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" name="productName"><br><br>
+
+    <label for="productDescription">Product Description:</label>
+    <textarea id="productDescription" name="productDescription"></textarea><br><br>
+
+    <label for="productQuantity">Product Quantity:</label>
+    <input type="number" id="productQuantity" name="productQuantity"><br><br>
+
+    <label for="productPrice">Product Price:</label>
+    <input type="text" id="productPrice" name="productPrice"><br><br>
+
+
+    <label for="productImage">Product Image:</label>
+    <input type="file" id="productImage" name="productImage"><br><br>
+
+    <input id="submit" type="submit" value="Submit">
+
+</form>
+</body>
+</html>

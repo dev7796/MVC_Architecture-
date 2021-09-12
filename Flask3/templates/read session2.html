@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setsession</title>
+</head>
+<body>
+<style scoped>
+.greenText {color:green;}
+</style>
+
+ {% if 'k1' in session %}
+
+    <p class="greenText" style="font-size: 30px">{{ "Welcome  " + session['k1'] }}</p>
+
+ {% endif %}
+
+
+<br>
+</body>
+</html>
+

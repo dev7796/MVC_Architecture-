@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <style scoped>
+    .redtext {color:red;}
+    .greenText {color:green;}
+    </style>
+    <p class="redtext">"ERROR!!!! Please Enter a valid Username and Password
+        <br>
+        <br>
+        <br>
+        Given Username: and Password: {{ ls1|join(' ') + "  !" }}</p>
+        <br>
+    <p class ="greenText">
+        {{ "Required Username: and Password: "+ls|join(' ') + "  !" }}</p>
+</body>
+</html>

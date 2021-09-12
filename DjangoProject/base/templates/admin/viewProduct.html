@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Product</title>
+</head>
+<body>
+<a href="/">Back</a><br><br>
+<table width="50%" border="1px solid line">
+    <tr>
+        <th>Product Name</th>
+        <th>Product Description</th>
+        <th>Product Quantity</th>
+        <th>Product Price</th>
+        <th>Product Image</th>
+        <th>Category Name</th>
+        <th>SubCategory Name</th>
+        <th colspan="3">Action</th>
+    </tr>
+
+    {% for i in product_vo_list %}
+        <tr>
+            <td>{{ i.product_name }}</td>
+            <td>{{ i.product_description }}</td>
+            <td>{{ i.product_quantity }}</td>
+            <td>{{ i.product_price }}</td>
+            <td><a href="{{ i.product_image.url }}" target="_blank">View</a></td>
+            <td>{{ i.product_category_vo.category_name }}</td>
+            <td>{{ i.product_subcategory_vo.subcategory_name }}</td>
+            <td><a href="/admin/delete_product?productId={{ i.product_id }}">Delete</a></td>
+            <td><a href="/admin/edit_product_data?productId={{ i.product_id }}">Edit Data</a></td>
+            <td><a href="/admin/edit_product_image?productId={{ i.product_id }}">Edit Image</a></td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+</body>
+</html>

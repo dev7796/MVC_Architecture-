@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border='1px'>
+
+        {% if data1 %}
+            <tr>
+                {% for key in data1[0] %}
+                    <th> {{ key }} </th>
+                {% endfor %}
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+        <!-- table rows -->
+         {% for dict_item in data1 %}
+            <tr>
+                 {% for value in dict_item.values() %}
+                    <td>{{ value }}</td>
+                 {%  endfor %}
+
+            <td><a href="/delete_subcategory?id= {{ dict_item['subcategory_id'] }}">delete</a> </td>
+             <td><a href="/edit_subcategory?id= {{ dict_item['subcategory_id'] }}">edit</a> </td>
+         {%  endfor %}
+        {% endif %}
+    </table>
+</body>
+</html>

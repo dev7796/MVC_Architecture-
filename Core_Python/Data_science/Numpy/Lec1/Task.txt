@@ -1,0 +1,17 @@
+row=input by user
+col=input by user
+
+value generation using arrange,random
+
+create row*col array
+
+convert it to numpy array
+
+index value=input by user
+slicing value=input by user
+
+perform indexing and sclicing,shape 
+
+mutation value=input by user
+perform mutattion task of numpy array
+

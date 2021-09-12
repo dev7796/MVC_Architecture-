@@ -1,0 +1,22 @@
+1)Register.html
+	fn
+	ln
+	un
+	pwd
+
+2)Login.html
+	un
+	pwd
+
+	[Login Error Message]
+	
+	Message disappear if we refresh the page(hint=flash())
+	flask official docs
+	
+3)Welcome.html
+
+	Welcome fn ln
+
+
+
+

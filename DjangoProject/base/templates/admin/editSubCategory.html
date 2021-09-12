@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">Add SubCategory</title>
+</head>
+<body>
+<a href="/">Back</a><br><br>
+<form method="post" action="/admin/update_subcategory/">
+    {% csrf_token %}
+
+    <label for="subcategoryCategoryId">Category Name:</label>
+    <select name="subcategoryCategoryId" id="subcategoryCategoryId">
+        <option selected disabled>Select Category</option>
+        {% for i in category_vo_list %}
+            <option value="{{ i.category_id }}">{{ i.category_name }}</option>
+        {% endfor %}
+    </select><br><br>
+
+
+    {% for j in subcategory_vo_list %}
+
+        <input type="hidden" id="subcategoryId" name="subcategoryId" value="{{ j.subcategory_id }}">
+
+        <label for="subcategoryName">Subcategory Name:</label>
+        <input type="text" id="subcategoryName" name="subcategoryName" value="{{ j.subcategory_name }}"><br><br>
+
+        <label for="subcategoryDescription">Subcategory Description:</label>
+        <textarea id="subcategoryDescription" name="subcategoryDescription">{{ j.subcategory_description }}</textarea>
+        <br><br>
+        <input type="submit" value="Submit">
+
+    {% endfor %}
+</form>
+
+</body>
+</html>

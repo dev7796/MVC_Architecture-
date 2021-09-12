@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="/">GO BACK</a>
+    <br><br>
+<table border='1px'>
+                <tr>
+                {% for i in data1[-1]%}
+                    <th>{{i}}</th>
+                {% endfor %}
+            </tr>
+                {% for values in data1[:-1] %}
+                <tr>
+                    {% for i in values %}
+                    <td>{{i}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    <br>
+        {{error}}
+<br>
+{{ time }}
+</body>
+</html>

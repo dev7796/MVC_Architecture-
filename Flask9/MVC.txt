@@ -1,0 +1,244 @@
+MVC architecture
+
+	Model->vo(value object)->schema / table  replica
+			to store data before inserting in database
+			to store data after fetching from database
+		
+		 ->dao(database access object)
+			db configuration + queries
+			
+	View->html files
+		client side view
+Controller->request-response handler
+
+client side / frontend /view 
+html
+css
+js
+jquery
+
+server side / backend / controller model
+python files
+
+				       request
+	view (html files)------------->controller (python files)
+			         <-------------
+				      response
+	(client validation)			   data get (post ,get)
+										  |
+										  |
+										  |
+									(server validation (Library + custom validation logic) + business logic)
+										  True    
+									data store in vo (python files)
+									 (value object)     							
+										   |
+										   |
+										   |
+									data will insert in database
+										  using dao (python files)
+										  dao=db configuration + queries
+									 (database access object)		
+										   |
+										   |								
+										   |
+										database
+										   |
+										  tables
+											
+source code optimization
+
+time management
+
+resource utlization
+
+loosly coupled code
+
+project flow management
+
+project directory management
+
+dynamic module attach / detach
+										
+main.py (main file to run the whole project)  (1)
+
+base (python package)
+	
+	__init__.py (2)
+	
+	com (python package)
+		
+		__init__.py (3)	
+
+		controller (python package)
+			
+			__init__.py (4)
+			
+			.py files (5)   
+		
+		dao (python package)
+			
+			__init__.py
+			
+			.py files
+		
+		vo (python package)
+			
+			__init__.py
+			
+			.py files
+	
+	static (directory) 
+		
+		css (directory) 
+			
+			.css files
+		
+		js (directory) 
+			
+			.js files
+			
+		images (directory) 
+			
+			.png /.jpg / .jpeg files
+			
+		fonts (directory) 
+			
+			icon files
+			
+		docs (directory) 
+		
+			project realted documents
+			
+	templates (directory)
+		
+		admin (directory)
+			
+			.html files
+									
+PEP 8 naming convention
+
+------never used space in project-------------
+
+project name
+
+	sentence case only (GarbageDetection)
+																			
+python package name
+	
+	lowercase alphabets only
+	
+python file name
+	
+	lowercase alphabets and underscore only
+	
+	category_controller.py
+	
+	category_dao.py
+	
+	category_vo.py
+	
+html file name
+	
+	lowercase alphabets and underscore only
+	
+	add_category.html
+	
+	view_category.html
+	
+	delete_category.html
+	
+	edit_category.html
+	
+	update_category.html
+	
+directory name
+	
+	lowercase alphabets and underscore only
+	
+	com
+	
+variable name
+
+	lowercase alphabets and underscore only (try to avoid digits if possible)
+	
+	category_id
+	
+	category_name
+	
+	category_description
+	
+class name
+	
+	sentence case alphabets only
+	
+	CategoryVO
+	
+	CategoryDAO
+	
+class object name (try to avoid digits if possible)
+	
+	lowercase alphabets and underscore only
+	
+	category_vo=CategoryVO()
+	
+	category_dao=CategoryDAO()
+	
+any kind of file name
+	
+	lowercase alphabets and underscore only
+	
+	devarsh_face.jpg
+					
+url pattern
+   
+	lowercase alphabets and underscore only										
+	
+	/admin/insert_category
+	
+	/admin/view_category
+	
+	/admin/delete_category
+	
+	/admin/edit_category
+	
+	/admin/update_category
+			
+url pattern function or any udf function name
+	
+	lowercase alphabets and underscore only										
+	
+	admin_insert_category()
+	
+	admin_view_category()
+	
+	admin_delete_category()
+	
+	admin_edit_category()
+	
+	admin_update_category()
+
+database name
+
+    lowercase alphabets only
+
+    pythondb
+
+database table name
+
+    lowercase alphabets and underscore only
+
+    category_table
+
+database table columns name
+
+    category_id (pk ,auto_increment)
+
+	category_name
+
+	category_description
+	
+	category_login_id (fk)
+
+
+	

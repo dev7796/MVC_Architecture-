@@ -1,0 +1,58 @@
+conda install pandas
+
+pip install pandas
+
+pandas="Python and data analysis"
+
+Python has long been great for data munging and preparation, but less so for data analysis and modeling. 
+
+pandas helps fill this gap, enabling you to carry out your entire data analysis workflow in Python
+
+Tools for reading and writing data between in-memory data structures and different formats: CSV and text files, Microsoft Excel, SQL databases,etc.
+
+Intelligent data alignment and integrated handling of missing data and easily manipulate messy data into an orderly form;
+
+Flexible reshaping and pivoting of data sets;
+
+Intelligent label-based slicing, fancy indexing, and subsetting of large data sets;
+
+
+
+
+
+Columns can be inserted and deleted from data structures for size mutability;
+
+Aggregating or transforming data with a powerful group by engine allowing split-apply-combine operations on data sets;
+
+High performance merging and joining of data sets;
+
+
+Python with pandas is in use in a wide variety of academic and commercial domains, including Finance, Neuroscience, Economics, Statistics, Advertising, Web Analytics, and more.
+
+
+
+Series
+
+Series is a one-dimensional labeled array capable of holding any data type (integers, strings, floating point numbers, Python objects, etc.).
+
+The axis labels are collectively referred to as the index. 
+
+Series is the datastructure for a single column of a DataFrame
+
+s = pd.Series(data, index=index)
+
+
+
+DataFrame
+
+DataFrame is a 2-dimensional labeled data structure with columns of potentially different types or tabular data structure with labeled axes (rows and columns).
+
+You can think of it like a spreadsheet or SQL table, or a dict of Series objects.
+
+It is generally the most commonly used pandas object. Like Series, DataFrame accepts many different kinds of input:
+
+Dict of 1D ndarrays, lists, dicts, or Series
+2-D numpy.ndarray
+Structured or record ndarray
+A Series
+Another DataFrame

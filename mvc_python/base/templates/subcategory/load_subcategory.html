@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/insert_subcategory" method="post">
+    <CENTER>
+        <b style="font-size: 25px ; color: orange">INSERT SUBCATEGORY</b>
+        <br>
+        <br>
+<label for="subcategory"><b>Choose a Category:</b></label>
+    <select name="subcategory" id="subcategory">
+        <option disabled selected value> -- select an option -- </option>
+            {% for dict_item in data1 %}
+                        <option name='category_name' value={{dict_item['categoryID']}}>{{dict_item['categoryName']}}</option> <!-- give ID as value in option tag -->
+
+        {%  endfor %}
+
+    </select>
+    <br>
+    <br>
+        <b>SubCategory Name:</b><input type="text" name="subcategory_name"/><br><br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul class=flashes></ul>
+                        {% for category, message in messages %}
+                            {% if category == 'error1' %}
+                            <td><p class="{{ category }}" style="color: red; font-size: 25px">{{ message }}</p></td>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+        <b>SubCategory Description:</b><input type="text" name="subcategory_description"/><br><br>
+    <input  type="submit" value="Insert SubCategory"/><br><br>
+    </CENTER>
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View SubCategory</title>
+</head>
+<body>
+<a href="/">Back</a><br><br>
+<table width="50%" border="1px solid line">
+    <tr>
+        <th>SubCategory Name</th>
+        <th>SubCategory Description</th>
+        <th>Category Name</th>
+        <th colspan="2">Action</th>
+    </tr>
+    {% for i in subcategory_vo_list %}
+        <tr>
+            <td>{{ i.subcategory_name }}</td>
+            <td>{{ i.subcategory_description }}</td>
+            <td>{{ i.subcategory_category_vo.category_name }}</td>
+            <td><a href="/admin/delete_subcategory?subcategoryId={{ i.subcategory_id }}">Delete</a></td>
+            <td><a href="/admin/edit_subcategory?subcategoryId={{ i.subcategory_id }}">Edit</a></td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+</body>
+</html>

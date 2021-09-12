@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="10px" align="center" style="font-size: 40px" >
+    <tr><th>Insert Data</th>
+    <th>View Data</th>
+    <th>Edit Data</th>
+    <th>Delete Data</th>
+        <th>Register User</th>
+        <th>Login User</th>
+        <th>Insert Subcategory</th>
+        <th>View Subcategory</th>
+        <th>View Category</th>
+<tr>
+    <td><a href="{{ url_for('load_category') }}">Click Here</a></td>
+    <td><a href="{{ url_for('view_category') }}">Click Here</a></td>
+    <td><a href="{{ url_for('view_category') }}">Click Here</a></td>
+    <td><a href="{{ url_for('view_category') }}">Click Here</a></td>
+    <td><a href="{{ url_for('register') }}">Click Here</a></td>
+    <td><a href="{{ url_for('login') }}">Click Here</a></td>
+    <td><a href="{{ url_for('load_subcategory') }}">Click Here</a></td>
+    <td><a href="{{ url_for('view_subcategory') }}">Click Here</a></td>
+    <td><a href="{{ url_for('view_category') }}">Click Here</a></td>
+</tr>
+</table>
+</body>
+</html>

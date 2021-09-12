@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="title">Add Category</title>
+</head>
+<body>
+<a href="/">Back</a><br><br>
+<form method="post" action="/admin/update_category/">
+
+    {% csrf_token %}
+
+    {% for i in category_vo_list %}
+
+        <input type="hidden" id="categoryId" name="categoryId" value="{{ i.category_id }}">
+
+        <label for="categoryName">Category Name:</label>
+
+        <input type="text" id="categoryName" name="categoryName" value="{{ i.category_name }}"><br><br>
+
+        <label for="categoryDescription">Category Description:</label>
+
+        <textarea id="categoryDescription" name="categoryDescription">{{ i.category_description }}</textarea><br><br>
+
+        <input type="submit" value="Submit">
+
+    {% endfor %}
+</form>
+
+</body>
+</html>

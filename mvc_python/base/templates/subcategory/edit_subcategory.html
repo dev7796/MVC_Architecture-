@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>EditData</title>
+</head>
+<body>
+{% set ls=[] %}
+ {% if edit_data %}
+            {% for k,v in edit_data[0].items() %}
+                {% set ls = ls.append(v) %}
+            {% endfor %}
+ {% endif %}
+<form  action="http://127.0.0.1:9001/update_subcategory?id={{ ls[0] }}" method="post">
+    <CENTER>
+        <p style="color:red;font-size:40px;"><b> Edit SubCategory </b></p>
+        <br>
+        <br>
+
+        Category Name:<input type="text" name="subcategory_name" value="{{ ls[1] }}"/><br><br>
+        Category Description:<input type="text" name="subcategory_description" value="{{ ls[3] }}"/><br><br>
+        <input  type="submit" value="Edit SubCategory"/><br><br>
+
+    </CENTER>
+</form>
+</body>
+</html>
